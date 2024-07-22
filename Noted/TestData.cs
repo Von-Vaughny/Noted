@@ -17,11 +17,11 @@ namespace Noted
 
             var N1 = new Note
             {
-                Time_stamps = new TimeStamps
+                TimeStamps = new TimeStamps
                 {
-                    Creation_date = DateTime.Now,
-                    Modified_date = DateTime.Now,
-                    Alert_date = DateTime.Now.AddDays(3)
+                    CreationDate = DateTime.Now,
+                    ModifiedDate = DateTime.Now,
+                    AlertDate = DateTime.Now.AddDays(3)
                 },
                 Message = "Dentist (321 Norse Drive) on 3/27 @ 1400",
                 Label = label_1
@@ -31,11 +31,11 @@ namespace Noted
 
             var N2 = new Note
             {
-                Time_stamps = new TimeStamps
+                TimeStamps = new TimeStamps
                 {
-                    Creation_date = DateTime.Now,
-                    Modified_date = DateTime.Now.AddHours(2),
-                    Alert_date = DateTime.Now.AddDays(3)
+                    CreationDate = DateTime.Now,
+                    ModifiedDate = DateTime.Now.AddHours(2),
+                    AlertDate = DateTime.Now.AddDays(3)
                 },
                 Message = "hello world"
             };
@@ -44,11 +44,11 @@ namespace Noted
 
             var N3 = new Note
             {
-                Time_stamps = new TimeStamps
+                TimeStamps = new TimeStamps
                 {
-                    Creation_date = DateTime.Now,
-                    Modified_date = DateTime.Now.AddMinutes(2),
-                    Alert_date = DateTime.Now.AddMinutes(3)
+                    CreationDate = DateTime.Now,
+                    ModifiedDate = DateTime.Now.AddMinutes(2),
+                    AlertDate = DateTime.Now.AddMinutes(3)
                 },
                 Message = "Possible Locations: \nGreece\nCosta Rica\n"
             };

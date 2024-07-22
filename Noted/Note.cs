@@ -2,16 +2,33 @@
 {
     public class Note
     {
+        private TimeStamps? _timeStamps;
 
-        public required TimeStamps Time_stamps { get; set; }
+        public required TimeStamps TimeStamps 
+        {
+            get { return _timeStamps!; }
+            set { _timeStamps = value; } 
+        }
 
-        public required string Message { get; set; }
+        private string? _message;
 
-        public Label? Label { get; set; }
+        public required string Message 
+        {
+            get { return _message!; }
+            set { _message = value; }
+        }
+
+        private Label? _label;
+
+        public Label? Label
+        {
+            get { return _label; }
+            set { _label = value; }
+        }
 
         public override string ToString() // CURRENT STRING ONLY FOR TESTING
         {
-            return $"Creation Date: {Time_stamps.Creation_date}\nModified Date: {Time_stamps.Modified_date}\nAlert Date: {Time_stamps.Alert_date}\n\n" +
+            return $"Creation Date: {TimeStamps.CreationDate}\nModified Date: {TimeStamps.ModifiedDate}\nAlert Date: {TimeStamps.AlertDate}\n\n" +
                 $"{Message}\n\n".TrimStart();
         }
 

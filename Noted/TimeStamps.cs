@@ -3,10 +3,28 @@ namespace Noted
 {
     public class TimeStamps
     {
-        public required DateTime Creation_date { get; set; }
+        private DateTime _creationDate;
 
-        public required DateTime Modified_date { get; set; }
+        public required DateTime CreationDate
+        { 
+            get { return _creationDate; }
+            set { _creationDate = value; }
+        }
 
-        public required DateTime Alert_date { get; set; }     
+        private DateTime _modifiedDate;
+
+        public required DateTime ModifiedDate 
+        { 
+            get { return _modifiedDate; }   
+            set { _modifiedDate = value; }  
+        }
+
+        private DateTime _alertDate;
+
+        public required DateTime AlertDate 
+        { 
+            get { return _alertDate; }
+            set { _alertDate = value; }
+        }   
     } 
 }
