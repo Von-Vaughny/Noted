@@ -17,7 +17,7 @@ namespace Noted
 
             var N1 = new Note
             {
-                TimeStamps = new TimeStamps
+                AccessTimes = new TimeStamps
                 {
                     CreationDate = DateTime.Now,
                     ModifiedDate = DateTime.Now,
@@ -31,7 +31,7 @@ namespace Noted
 
             var N2 = new Note
             {
-                TimeStamps = new TimeStamps
+                AccessTimes = new TimeStamps
                 {
                     CreationDate = DateTime.Now,
                     ModifiedDate = DateTime.Now.AddHours(2),
@@ -44,18 +44,41 @@ namespace Noted
 
             var N3 = new Note
             {
-                TimeStamps = new TimeStamps
+                AccessTimes = new TimeStamps
                 {
                     CreationDate = DateTime.Now,
                     ModifiedDate = DateTime.Now.AddMinutes(2),
                     AlertDate = DateTime.Now.AddMinutes(3)
                 },
-                Message = "Possible Locations: \nGreece\nCosta Rica\n"
+                Message = """
+                    Possible Locations: 
+                    Greece
+                    Costa Rica
+                    """
             };
 
             notesList.Add(N3);
 
             return notesList;
+        }
+
+        public static List<Notification> GenerateNotificationList() 
+        { 
+        
+            var notes = GenerateNoteList();
+            var notificationList = new List<Notification>();
+
+            foreach (var note in notes)
+            {
+                var notification = new Notification
+                {
+                    AlertDate = note.AccessTimes.AlertDate,
+                    Message = note.Message
+                };
+                notificationList.Add(notification);
+            }
+
+            return notificationList;
         }
     }
 }
