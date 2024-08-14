@@ -1,6 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-
-namespace Noted
+﻿namespace Noted
 {
     public class Notification
     {
@@ -21,7 +19,7 @@ namespace Noted
             set { _message = value; } 
         }
 
-        public override string ToString() 
+        public override string ToString() // REWRITE FOR NOTIFICATION
         {
 
             return $"""

@@ -62,7 +62,7 @@ namespace Noted
             return notesList;
         }
 
-        public static List<Notification> GenerateNotificationList() 
+        public static List<Notification> GenerateNotificationList()
         { 
         
             var notes = GenerateNoteList();
