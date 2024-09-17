@@ -2,6 +2,7 @@
 {
     public class Note
     {
+
         private TimeStamps? _accessTimes;
 
         public required TimeStamps AccessTimes
@@ -25,7 +26,7 @@
             get { return _label; }
             set { _label = value; }
         }
-    
+
         public override string ToString() // CURRENT STRING ONLY FOR TESTING
         {
             string labelName = "No Label";
@@ -35,9 +36,9 @@
             return $"""
                 {labelName}
 
-                Creation Date: {AccessTimes.CreationDate}
-                Modified Date: {AccessTimes.ModifiedDate}
-                Alert Date: {AccessTimes.AlertDate}
+                Creation Date: {AccessTimes.CreationDateTime}
+                Modified Date: {AccessTimes.LastModifiedDateTime}
+                Alert Date: {AccessTimes.NotifyDateTime}            
 
                 Message: 
                 

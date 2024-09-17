@@ -1,18 +1,31 @@
-﻿using Noted;
-
-var notes = TestData.GenerateNoteList();
-
-foreach (var note in notes)
+﻿namespace Noted
 {
-    Console.WriteLine(note);
-}
-
-var notifications = TestData.GenerateNotificationList();
-
-foreach (var notification in notifications)
-{
-    if (notification.AlertDate.Date.Equals(DateTime.Now.Date) && DateTime.Compare(notification.AlertDate, DateTime.Now) > 0)
+    class Program
     {
-        Console.WriteLine(notification);
+        static void Main(string[] args)
+        {
+            var NotesList = TestData.GenerateNoteList();
+            foreach (var note in NotesList) {
+                Console.WriteLine(note);
+            }
+
+            var NotificationList = TestData.GenerateNotificationList();
+            foreach (var notification in NotificationList) {
+                Console.WriteLine(notification);
+                }
+
+            while (true)
+            {
+
+                Console.WriteLine("Enter note: ");
+                Console.ReadLine();
+
+            }
+        
+        }
+
     }
 }
+
+
+

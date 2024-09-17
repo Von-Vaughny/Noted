@@ -1,4 +1,4 @@
-﻿using System.Drawing;
+﻿using SkiaSharp;
 
 namespace Noted
 {
@@ -12,16 +12,16 @@ namespace Noted
 
             var label_1 = new Label {
                 Name = "Appointments",
-                Color = Color.Red
+                Color = SKColors.Red,
             };
 
             var N1 = new Note
             {
                 AccessTimes = new TimeStamps
                 {
-                    CreationDate = DateTime.Now,
-                    ModifiedDate = DateTime.Now,
-                    AlertDate = DateTime.Now.AddDays(3)
+                    CreationDateTime = DateTime.Now,
+                    LastModifiedDateTime = DateTime.Now,
+                    NotifyDateTime = DateTime.Now.AddDays(3)
                 },
                 Message = "Dentist (321 Norse Drive) on 3/27 @ 1400",
                 Label = label_1
@@ -33,9 +33,9 @@ namespace Noted
             {
                 AccessTimes = new TimeStamps
                 {
-                    CreationDate = DateTime.Now,
-                    ModifiedDate = DateTime.Now.AddHours(2),
-                    AlertDate = DateTime.Now.AddDays(3)
+                    CreationDateTime = DateTime.Now,
+                    LastModifiedDateTime = DateTime.Now.AddHours(2),
+                    NotifyDateTime = DateTime.Now.AddSeconds(20)
                 },
                 Message = "hello world"
             };
@@ -46,9 +46,9 @@ namespace Noted
             {
                 AccessTimes = new TimeStamps
                 {
-                    CreationDate = DateTime.Now,
-                    ModifiedDate = DateTime.Now.AddMinutes(2),
-                    AlertDate = DateTime.Now.AddMinutes(3)
+                    CreationDateTime = DateTime.Now,
+                    LastModifiedDateTime = DateTime.Now.AddMinutes(2),
+                    NotifyDateTime = DateTime.Now.AddMinutes(3)
                 },
                 Message = """
                     Possible Locations: 
@@ -71,8 +71,8 @@ namespace Noted
             foreach (var note in notes)
             {
                 var notification = new Notification
-                {
-                    AlertDate = note.AccessTimes.AlertDate,
+                {       
+                    NotifyDateTime = note.AccessTimes.NotifyDateTime,
                     Message = note.Message
                 };
                 notificationList.Add(notification);

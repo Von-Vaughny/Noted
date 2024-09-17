@@ -1,4 +1,4 @@
-﻿using System.Drawing;
+﻿using SkiaSharp;
 
 namespace Noted
 {
@@ -12,18 +12,11 @@ namespace Noted
             set { _name = value; }
         }
 
-        private Color _color;
+        private SKColor _color;
 
-        public required Color Color {
+        public SKColor Color {
             get { return _color; }
             set { _color = value; } 
         }
-
-        //public override string ToString()
-        //{
-        //    Console.ForegroundColor = ConsoleColor.Red;
-        //    return $"{Name}";
-        //}
-
     }
 }
