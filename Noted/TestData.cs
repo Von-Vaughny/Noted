@@ -72,11 +72,18 @@ namespace Noted
             {
                 var notification = new Notification
                 {       
-                    NotifyDateTime = note.AccessTimes.NotifyDateTime,
-                    Message = note.Message
+                   Note = note,
+                   NotificationType = NotificationType.Note
                 };
                 notificationList.Add(notification);
             }
+
+            var n1 = new Notification()
+            {
+                NotificationType = NotificationType.Extra,
+                Message = "Happy Birthday",
+                TimeStamp = DateTime.Now,
+            };
 
             return notificationList;
         }

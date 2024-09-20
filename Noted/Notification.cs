@@ -3,21 +3,41 @@
     public class Notification
     {
 
-        private DateTime _notifyDateTime;
+        private DateTime _timeStamp;
 
-        public required DateTime NotifyDateTime
+        public DateTime TimeStamp
         {
-            get { return _notifyDateTime; }
-            set { _notifyDateTime = value; }
+            get { return _timeStamp; }
+            set { _timeStamp = value; }
         }
 
         private string? _message;
 
-        public required string Message
+        public string Message
         {
             get { return _message!; }
             set { _message = value; }
         }
+
+        private bool _isRead;
+
+        public bool IsRead
+        {
+            get { return _isRead; }
+            set { _isRead = value; }
+        }
+
+
+        public NotificationType NotificationType { get; set; }
+
+        private Note _note;
+
+        public Note Note
+        {
+            get { return _note; }
+            set { _note = value; }
+        }
+
 
         public Notification() 
         {
@@ -29,7 +49,7 @@
         private async Task StartNotificationAsync() 
         {
             
-            var delay = NotifyDateTime - DateTime.Now;
+            var delay = TimeStamp - DateTime.Now;
 
             if (delay.TotalMilliseconds > 0)
             {
@@ -53,7 +73,7 @@
         {
 
             return $"""
-                This is a notification for the following message at {NotifyDateTime}:
+                This is a notification for the following message at {TimeStamp}:
 
                 {Message}
 
