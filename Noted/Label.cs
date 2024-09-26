@@ -6,7 +6,7 @@ namespace Noted
     {
         private string? _name;
 
-        public required string Name 
+        public string Name 
         {
             get { return _name!; }
             set { _name = value; }

@@ -5,7 +5,7 @@ namespace Noted
     {
         private DateTime _creationDateTime;
 
-        public required DateTime CreationDateTime
+        public DateTime CreationDateTime
         { 
             get { return _creationDateTime; }
             set { _creationDateTime = value; }
@@ -13,7 +13,7 @@ namespace Noted
 
         private DateTime _lastModifiedDateTime;
 
-        public required DateTime LastModifiedDateTime 
+        public DateTime LastModifiedDateTime 
         { 
             get { return _lastModifiedDateTime; }   
             set { _lastModifiedDateTime = value; }  
@@ -21,7 +21,7 @@ namespace Noted
 
         private DateTime _notifyDateTime;
 
-        public required DateTime NotifyDateTime 
+        public DateTime NotifyDateTime 
         { 
             get { return _notifyDateTime; }
             set { _notifyDateTime = value; }

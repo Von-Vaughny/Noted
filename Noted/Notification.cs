@@ -3,57 +3,45 @@
     public class Notification
     {
 
-        private DateTime _notifyDateTime;
+        private DateTime _timeStamp;
 
-        public required DateTime NotifyDateTime
+        public DateTime TimeStamp
         {
-            get { return _notifyDateTime; }
-            set { _notifyDateTime = value; }
+            get { return _timeStamp; }
+            set { _timeStamp = value; }
         }
 
         private string? _message;
 
-        public required string Message
+        public  string Message
         {
             get { return _message!; }
             set { _message = value; }
         }
 
-        public Notification() 
-        {
-           
-            // Start notification in the background
-            Task.Run(() => StartNotificationAsync());
+        private bool _isRead;
+
+        public bool IsRead 
+        { 
+            get { return _isRead; }
+            set { _isRead = value; }
         }
 
-        private async Task StartNotificationAsync() 
-        {
-            
-            var delay = NotifyDateTime - DateTime.Now;
+        public NotificationType NotificationType { get; set; }
 
-            if (delay.TotalMilliseconds > 0)
-            {
-                // Await asynchronously until the notification time
-                await Task.Delay(delay);
-                Notify();
-            }
-            
-            if (delay.TotalMilliseconds > 0)
-            {
-                // Alert notification has passed. Set new notification time.
-            }
-        }
+        private Note? _note;
 
-        private void Notify()
-        {
-            Console.WriteLine(ToString());
+        public Note Note 
+        { 
+            get { return _note!; }
+            set { _note = value; }
         }
 
         public override string ToString() // REWRITE FOR NOTIFICATION
         {
 
             return $"""
-                This is a notification for the following message at {NotifyDateTime}:
+                This is a notification for the following message at {TimeStamp}:
 
                 {Message}
 

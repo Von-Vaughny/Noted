@@ -5,7 +5,7 @@
 
         private TimeStamps? _accessTimes;
 
-        public required TimeStamps AccessTimes
+        public TimeStamps AccessTimes
         {
             get { return _accessTimes!; }
             set { _accessTimes = value; }
@@ -13,7 +13,7 @@
 
         private string? _message;
 
-        public required string Message
+        public string Message
         {
             get { return _message!; }
             set { _message = value; }
@@ -37,8 +37,8 @@
                 {labelName}
 
                 Creation Date: {AccessTimes.CreationDateTime}
-                Modified Date: {AccessTimes.LastModifiedDateTime}
-                Alert Date: {AccessTimes.NotifyDateTime}            
+                Last Modified Date: {AccessTimes.LastModifiedDateTime}
+                Notify Date: {AccessTimes.NotifyDateTime}            
 
                 Message: 
                 

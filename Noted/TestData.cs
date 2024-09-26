@@ -70,13 +70,22 @@ namespace Noted
 
             foreach (var note in notes)
             {
-                var notification = new Notification
-                {       
-                    NotifyDateTime = note.AccessTimes.NotifyDateTime,
-                    Message = note.Message
+                var n1 = new Notification
+                {
+                    NotificationType = NotificationType.Note,
+                    TimeStamp = note.AccessTimes.NotifyDateTime,
+                    Message = note.Message,
                 };
-                notificationList.Add(notification);
+                notificationList.Add(n1);
             }
+
+            var n2 = new Notification()
+            {
+                NotificationType = NotificationType.Extra,
+                Message = "Happy Birthday",
+                TimeStamp = DateTime.Now,
+            };
+            notificationList.Add(n2);
 
             return notificationList;
         }
